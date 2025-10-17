@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batangas City - Discover Natural Beauty</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Batangas City</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li>
+                    <a href="#home" class="nav-link active" title="Home">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#introduction" class="nav-link" title="Introduction">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#location" class="nav-link" title="Location">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#fees" class="nav-link" title="Fees & Hours">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#accommodations" class="nav-link" title="Accommodations">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"></path>
+                            <path d="M9 22V12h6v10"></path>
+                            <path d="M2 10.6L12 2l10 8.6"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#events" class="nav-link" title="Events">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav-link" title="Contact">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#faqs" class="nav-link" title="FAQs">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="sun-icon">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </div>
+            <h1>Discover the Natural Wonder of <span class="highlight">Batangas City</span></h1>
+            <p class="hero-subtitle">Where volcanic landscapes meet pristine waters, and adventure awaits at every turn</p>
+            <button class="cta-button" onclick="scrollToSection('introduction')">
+                Explore Now
+                <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <section id="introduction" class="section">
+        <div class="container">
+            <h2 class="section-title">Welcome to Batangas City</h2>
+            <div class="intro-grid">
+                <div class="intro-content">
+                    <p class="intro-text">
+                        Nestled in the heart of the Philippines, Batangas City is a paradise where nature's most spectacular creations come together. From the iconic Taal Volcano to the world-renowned marine biodiversity of Verde Island Passage, every corner tells a story of
+                        natural wonder.
+                    </p>
+                    <p class="intro-text">
+                        Whether you're seeking adventure on mountain trails, tranquility beneath the waves, or the simple pleasure of watching the sun set over pristine beaches, Batangas City offers an unforgettable escape into nature's embrace.
+                    </p>
+                    <div class="features">
+                        <div class="feature-card">
+                            <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                            <h3>Rich Heritage</h3>
+                            <p>Centuries of history and culture</p>
+                        </div>
+                        <div class="feature-card">
+                            <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                            <h3>Natural Wonders</h3>
+                            <p>Breathtaking landscapes and biodiversity</p>
+                        </div>
+                        <div class="feature-card">
+                            <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                            <h3>Year-Round Adventure</h3>
+                            <p>Perfect climate for exploration</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="assets/intro-image.jpg" alt="Batangas landscape">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Location & Directions</h2>
+            <div class="location-grid">
+                <div class="location-info">
+                    <div class="info-card">
+                        <h3>How to Get Here</h3>
+                        <div class="info-item">
+                            <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="3" x2="9" y2="21"></line>
+                            </svg>
+                            <div>
+                                <h4>By Car</h4>
+                                <p>2-3 hours from Manila via STAR Tollway or Coastal Road</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"></path>
+                            </svg>
+                            <div>
+                                <h4>By Bus</h4>
+                                <p>Regular trips from major terminals in Metro Manila</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            </svg>
+                            <div>
+                                <h4>By Boat</h4>
+                                <p>Ferry services available from nearby provinces</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Address</h3>
+                        <p>Batangas City, Batangas Province, Philippines</p>
+                        <p class="mt-2"><strong>Coordinates:</strong> 13.7565° N, 121.0583° E</p>
+                    </div>
+                </div>
+                <div id="map" class="map-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fees" class="section">
+        <div class="container">
+            <h2 class="section-title">Fees & Hours</h2>
+            <div class="fees-grid">
+                <div class="fee-card">
+                    <h3>Entrance Fees</h3>
+                    <div class="fee-item">
+                        <span>Adults</span>
+                        <span class="fee-price">₱100</span>
+                    </div>
+                    <div class="fee-item">
+                        <span>Children (4-12 years)</span>
+                        <span class="fee-price">₱50</span>
+                    </div>
+                    <div class="fee-item">
+                        <span>Senior Citizens / PWD</span>
+                        <span class="fee-price">₱80</span>
+                    </div>
+                    <div class="fee-item">
+                        <span>Students (with ID)</span>
+                        <span class="fee-price">₱75</span>
+                    </div>
+                    <p class="fee-note">*Fees may vary per attraction</p>
+                </div>
+                <div class="fee-card">
+                    <h3>Operating Hours</h3>
+                    <div class="hours-item">
+                        <span class="day">Monday - Friday</span>
+                        <span class="time">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Saturday - Sunday</span>
+                        <span class="time">7:00 AM - 7:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Holidays</span>
+                        <span class="time">7:00 AM - 8:00 PM</span>
+                    </div>
+                    <p class="fee-note">*Last entry 1 hour before closing</p>
+                </div>
+                <div class="fee-card special">
+                    <h3>Special Packages</h3>
+                    <ul class="package-list">
+                        <li>Day Tour Package - ₱500/person</li>
+                        <li>Island Hopping - ₱800/person</li>
+                        <li>Diving Package - ₱2,500/person</li>
+                        <li>Trekking Package - ₱600/person</li>
+                        <li>Family Package (4 pax) - ₱1,500</li>
+                    </ul>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="accommodations" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Accommodations & Dining</h2>
+            <div class="accommodation-content">
+                <div class="accommodation-category">
+                    <h3>Where to Stay</h3>
+                    <div class="accommodation-grid">
+                        <div class="accommodation-card">
+                            <h4>Luxury Resorts</h4>
+                            <p>Beachfront properties with world-class amenities</p>
+                            <span class="price-range">₱5,000 - ₱15,000/night</span>
+                        </div>
+                        <div class="accommodation-card">
+                            <h4>Boutique Hotels</h4>
+                            <p>Charming accommodations with local character</p>
+                            <span class="price-range">₱2,500 - ₱5,000/night</span>
+                        </div>
+                        <div class="accommodation-card">
+                            <h4>Budget Inns</h4>
+                            <p>Comfortable and affordable lodging options</p>
+                            <span class="price-range">₱800 - ₱2,000/night</span>
+                        </div>
+                        <div class="accommodation-card">
+                            <h4>Vacation Rentals</h4>
+                            <p>Home-style stays for families and groups</p>
+                            <span class="price-range">₱3,000 - ₱8,000/night</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="accommodation-category">
+                    <h3>Where to Eat</h3>
+                    <div class="dining-grid">
+                        <div class="dining-card">
+                            <h4>Fresh Seafood</h4>
+                            <p>Catch of the day prepared in traditional and contemporary styles</p>
+                        </div>
+                        <div class="dining-card">
+                            <h4>Local Cuisine</h4>
+                            <p>Authentic Batangueño dishes including Bulalo and Lomi</p>
+                        </div>
+                        <div class="dining-card">
+                            <h4>International Dining</h4>
+                            <p>Diverse options from Asian fusion to Western favorites</p>
+                        </div>
+                        <div class="dining-card">
+                            <h4>Kapeng Barako</h4>
+                            <p>Experience the famous strong coffee native to Batangas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="section">
+        <div class="container">
+            <h2 class="section-title">Events & Activities</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Volcano Trekking</h3>
+                    <p>Hike to the crater of Taal Volcano and witness breathtaking panoramic views</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>Scuba Diving</h3>
+                    <p>Explore the rich marine life of Verde Island Passage, the "Amazon of the Seas"</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Island Hopping</h3>
+                    <p>Visit pristine beaches and hidden coves around Batangas coastline</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Cultural Tours</h3>
+                    <p>Experience local festivals, historic sites, and traditional crafts</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Mountain Biking</h3>
+                    <p>Challenging trails through scenic mountain landscapes and rural areas</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
+                    <h3>Photography Tours</h3>
+                    <p>Capture stunning landscapes, sunsets, and wildlife with expert guides</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Contact & Guidelines</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>+63 (43) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>tourism@batangascity.gov.ph</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Tourism Office, Batangas City Hall</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+                <div class="guidelines">
+                    <h3>Visitor Guidelines</h3>
+                    <ul class="guidelines-list">
+                        <li>Respect local customs and traditions</li>
+                        <li>Dispose of trash properly - keep nature clean</li>
+                        <li>Follow designated trails and marked paths</li>
+                        <li>Do not disturb wildlife or remove natural specimens</li>
+                        <li>Swimming only in designated safe areas</li>
+                        <li>Hire licensed tour guides for safety</li>
+                        <li>Check weather conditions before outdoor activities</li>
+                        <li>Bring adequate sun protection and water</li>
+                        <li>Support local businesses and communities</li>
+                        <li>Photography for commercial use requires permits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faqs" class="section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the best time to visit Batangas City?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The best time to visit is during the dry season from November to May. The weather is perfect for outdoor activities, beach trips, and volcano trekking. December to February offers cooler temperatures.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is it safe to visit Taal Volcano?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, when the alert level is low. Always check with PHIVOLCS for current volcanic activity status before planning your visit. Licensed guides are required and will ensure your safety.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need a diving certification for Anilao?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For scuba diving, a valid certification is required. However, snorkeling is available for non-divers. Many resorts also offer beginner diving courses and discovery dives with instructors.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are there ATMs and banks in the area?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, Batangas City has numerous banks and ATMs. However, in remote beach areas and islands, cash is preferred as card facilities may be limited. Withdraw cash before heading to resorts.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What should I bring for a day trip?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Essentials include sunscreen, hat, comfortable walking shoes, swimwear, towel, water bottle, snacks, cash, and a waterproof bag for electronics. Don't forget your camera for stunning photos!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is mobile signal available in tourist areas?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most tourist areas have good mobile signal coverage. However, some remote islands and mountain areas may have limited or no signal. Inform your contacts before heading to remote locations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Batangas City</span>
+                </div>
+                <p>Experience the natural beauty of the Philippines</p>
+                <p class="copyright">&copy; 2025 Batangas City Tourism. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // Initialize the map centered on Himamawo Spring
+        var map = L.map('map').setView([13.8249956, 121.1050656], 13.94);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Add marker for Himamawo Spring
+        L.marker([13.8249956, 121.1050656]).addTo(map)
+            .bindPopup('Himamawo Spring')
+            .openPopup();
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
