@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batangas City - Discover Natural Beauty</title>
+    <title>OLO-OLO Mangrove Forest and Eco Park - Discover Natural Beauty</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for environmental theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <!-- Include Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
@@ -18,7 +22,7 @@
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                 </svg>
-                <span>Batangas City</span>
+                <span>OLO-OLO</span>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
@@ -34,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#introduction" class="nav-link" title="Introduction">
+                    <a href="#introduction" class="nav-link" title="About">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"></circle>
                             <circle cx="12" cy="12" r="2"></circle>
@@ -50,10 +54,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#fees" class="nav-link" title="Fees & Hours">
+                    <a href="#fees" class="nav-link" title="Fees">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"></circle>
                             <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#events" class="nav-link" title="Activities">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
                         </svg>
                     </a>
                 </li>
@@ -67,11 +80,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#events" class="nav-link" title="Events">
+                    <a href="#oswa" class="nav-link" title="OSWA">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                         </svg>
                     </a>
                 </li>
@@ -80,6 +94,16 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                             <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#euf" class="nav-link" title="EUF">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="19" x2="12" y2="13"></line>
+                            <line x1="9" y1="16" x2="15" y2="16"></line>
                         </svg>
                     </a>
                 </li>
@@ -112,8 +136,8 @@
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
             </div>
-            <h1>Discover the Natural Wonder of <span class="highlight">Batangas City</span></h1>
-            <p class="hero-subtitle">Where volcanic landscapes meet pristine waters, and adventure awaits at every turn</p>
+            <h1>Discover the Natural Wonder of <span class="highlight">OLO-OLO Mangrove Forest</span></h1>
+            <p class="hero-subtitle">Where lush mangrove ecosystems meet coastal serenity, and eco-adventure awaits at every turn</p>
             <button class="cta-button" onclick="scrollToSection('introduction')">
                 Explore Now
                 <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -121,54 +145,51 @@
                 </svg>
             </button>
         </div>
-        <div class="scroll-indicator">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-        </div>
     </section>
 
     <section id="introduction" class="section">
         <div class="container">
-            <h2 class="section-title">Welcome to Batangas City</h2>
+            <h2 class="section-title">About Us</h2>
             <div class="intro-grid">
                 <div class="intro-content">
                     <p class="intro-text">
-                        Nestled in the heart of the Philippines, Batangas City is a paradise where nature's most spectacular creations come together. From the iconic Taal Volcano to the world-renowned marine biodiversity of Verde Island Passage, every corner tells a story of
-                        natural wonder.
+                        The Olo-Olo Mangrove Forest and Eco Park is a sustainable eco-tourism destination located in the coastal barangay of Olo-Olo, Lobo, Batangas. It was established through the efforts of the Olo-Olo Seaside Workers Association (OSWA) in partnership with
+                        the local government to protect and conserve the mangrove ecosystem while promoting environmental education and livelihood for the community.
                     </p>
                     <p class="intro-text">
-                        Whether you're seeking adventure on mountain trails, tranquility beneath the waves, or the simple pleasure of watching the sun set over pristine beaches, Batangas City offers an unforgettable escape into nature's embrace.
+                        Whether you're seeking eco-education through guided tours, peaceful kayaking along mangrove-lined waterways, birdwatching of resident and migratory species, or simply enjoying the serene beauty of this coastal paradise, the OLO-OLO Eco Park offers an
+                        unforgettable immersion into nature's delicate balance.
                     </p>
-                    <div class="features">
-                        <div class="feature-card">
-                            <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                            </svg>
-                            <h3>Rich Heritage</h3>
-                            <p>Centuries of history and culture</p>
-                        </div>
-                        <div class="feature-card">
-                            <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                <path d="M2 17l10 5 10-5"></path>
-                                <path d="M2 12l10 5 10-5"></path>
-                            </svg>
-                            <h3>Natural Wonders</h3>
-                            <p>Breathtaking landscapes and biodiversity</p>
-                        </div>
-                        <div class="feature-card">
-                            <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 6v6l4 2"></path>
-                            </svg>
-                            <h3>Year-Round Adventure</h3>
-                            <p>Perfect climate for exploration</p>
-                        </div>
+                    <div style="margin-top: 24px;">
+                        <a href="booking.html" class="cta-button" style="display: inline-flex; text-decoration: none;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg> Book Your Visit Now
+                        </a>
                     </div>
                 </div>
                 <div class="intro-image">
-                    <img src="assets/intro-image.jpg" alt="Batangas landscape">
+                    <img src="assets/hero-bg.JPG" alt="Batangas landscape">
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    <h3>VISION</h3>
+                    <p>Isang malakas at maunlad na samahan na may malasakit sa kalikasan at kabuhayan.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <h3>MISSION</h3>
+                    <p>Sama-samang magtulungan para maisagawa ang programang pangkalikasan at pangkabuhayan.</p>
                 </div>
             </div>
         </div>
@@ -213,8 +234,8 @@
                     </div>
                     <div class="info-card">
                         <h3>Address</h3>
-                        <p>Batangas City, Batangas Province, Philippines</p>
-                        <p class="mt-2"><strong>Coordinates:</strong> 13.7565° N, 121.0583° E</p>
+                        <p>OLO-OLO MANGROVE FOREST AND ECO PARK, Batangas City, Batangas Province, Philippines</p>
+                        <p class="mt-2"><strong>Coordinates:</strong> 13.647113° N, 121.210055° E</p>
                     </div>
                 </div>
                 <div id="map" class="map-container"></div>
@@ -224,107 +245,109 @@
 
     <section id="fees" class="section">
         <div class="container">
-            <h2 class="section-title">Fees & Hours</h2>
+            <h2 class="section-title">Facilities & Rates</h2>
+
+            <!-- Basic Fees -->
             <div class="fees-grid">
                 <div class="fee-card">
-                    <h3>Entrance Fees</h3>
+                    <h3>Basic Entrance Fees</h3>
                     <div class="fee-item">
-                        <span>Adults</span>
-                        <span class="fee-price">₱100</span>
+                        <span>Entrance Fee</span>
+                        <span class="fee-price">₱20 per head</span>
                     </div>
                     <div class="fee-item">
-                        <span>Children (4-12 years)</span>
-                        <span class="fee-price">₱50</span>
+                        <span>Environmental Fee</span>
+                        <span class="fee-price">₱30 (non-residents of Lobo)</span>
                     </div>
                     <div class="fee-item">
-                        <span>Senior Citizens / PWD</span>
-                        <span class="fee-price">₱80</span>
+                        <span>Bamboo Raft Ride &nbsp;</span>
+                        <span class="fee-price">₱50/head or ₱300 (groups≤6)</span>
                     </div>
                     <div class="fee-item">
-                        <span>Students (with ID)</span>
-                        <span class="fee-price">₱75</span>
+                        <span>Tour Guide</span>
+                        <span class="fee-price">₱150 per group</span>
                     </div>
-                    <p class="fee-note">*Fees may vary per attraction</p>
+                    <p class="fee-note">*Tour guide required for outside resort area</p>
                 </div>
+
+                <!-- Day Tour & Overnight Rates -->
                 <div class="fee-card">
-                    <h3>Operating Hours</h3>
-                    <div class="hours-item">
-                        <span class="day">Monday - Friday</span>
-                        <span class="time">8:00 AM - 6:00 PM</span>
+                    <h3>Day Tour & Overnight Rates</h3>
+                    <div class="fee-item">
+                        <span>Open Kubo (12 pax)</span>
+                        <span class="fee-price">₱1,500 / ₱2,000</span>
                     </div>
-                    <div class="hours-item">
-                        <span class="day">Saturday - Sunday</span>
-                        <span class="time">7:00 AM - 7:00 PM</span>
+                    <div class="fee-item">
+                        <span>Closed Kubo (5 pax)</span>
+                        <span class="fee-price">₱2,000 / ₱2,500</span>
                     </div>
-                    <div class="hours-item">
-                        <span class="day">Holidays</span>
-                        <span class="time">7:00 AM - 8:00 PM</span>
+                    <div class="fee-item">
+                        <span>Pyramid Hut (5 pax)</span>
+                        <span class="fee-price">₱2,000 / ₱2,500</span>
                     </div>
-                    <p class="fee-note">*Last entry 1 hour before closing</p>
+                    <div class="fee-item">
+                        <span>Pavilion (40 pax)</span>
+                        <span class="fee-price">₱5,500 / ₱7,500</span>
+                    </div>
+                    <p class="fee-note">*First price is Day Tour, second is Overnight</p>
                 </div>
-                <div class="fee-card special">
-                    <h3>Special Packages</h3>
-                    <ul class="package-list">
-                        <li>Day Tour Package - ₱500/person</li>
-                        <li>Island Hopping - ₱800/person</li>
-                        <li>Diving Package - ₱2,500/person</li>
-                        <li>Trekking Package - ₱600/person</li>
-                        <li>Family Package (4 pax) - ₱1,500</li>
-                    </ul>
-                    <button class="book-btn">Book Now</button>
+
+                <!-- Recreational Activities -->
+                <div class="fee-card">
+                    <h3>Recreational & Leisure</h3>
+                    <div class="fee-item">
+                        <span>Tent Pitching (own)</span>
+                        <span class="fee-price">₱500</span>
+                    </div>
+                    <div class="fee-item">
+                        <span>Tent Rental</span>
+                        <span class="fee-price">₱700 / ₱800 / ₱1,000</span>
+                    </div>
+                    <div class="fee-item">
+                        <span>Boodle Fight</span>
+                        <span class="fee-price">₱500 per head</span>
+                    </div>
+                    <div class="fee-item">
+                        <span>Massage Therapy</span>
+                        <span class="fee-price">₱700 per hour</span>
+                    </div>
+                    <div class="fee-item">
+                        <span>Kayaking</span>
+                        <span class="fee-price">₱250 per head</span>
+                    </div>
+                    <div class="fee-item">
+                        <span>Banana Boat</span>
+                        <span class="fee-price">₱300 per pax</span>
+                    </div>
+                    <div class="fee-item">
+                        <span>Island Hopping</span>
+                        <span class="fee-price">₱5,000</span>
+                    </div>
+                    <p class="fee-note">*Boodle Fight requires 2 days advance booking</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="accommodations" class="section bg-dark">
-        <div class="container">
-            <h2 class="section-title">Accommodations & Dining</h2>
-            <div class="accommodation-content">
-                <div class="accommodation-category">
-                    <h3>Where to Stay</h3>
-                    <div class="accommodation-grid">
-                        <div class="accommodation-card">
-                            <h4>Luxury Resorts</h4>
-                            <p>Beachfront properties with world-class amenities</p>
-                            <span class="price-range">₱5,000 - ₱15,000/night</span>
-                        </div>
-                        <div class="accommodation-card">
-                            <h4>Boutique Hotels</h4>
-                            <p>Charming accommodations with local character</p>
-                            <span class="price-range">₱2,500 - ₱5,000/night</span>
-                        </div>
-                        <div class="accommodation-card">
-                            <h4>Budget Inns</h4>
-                            <p>Comfortable and affordable lodging options</p>
-                            <span class="price-range">₱800 - ₱2,000/night</span>
-                        </div>
-                        <div class="accommodation-card">
-                            <h4>Vacation Rentals</h4>
-                            <p>Home-style stays for families and groups</p>
-                            <span class="price-range">₱3,000 - ₱8,000/night</span>
-                        </div>
+            <!-- Important Notes -->
+            <div class="facilities-notes">
+                <h3>Additional Notes</h3>
+                <div class="notes-grid">
+                    <div class="note-box">
+                        <h4>Facility Notes</h4>
+                        <ul>
+                            <li>Pavilion has tables and chairs only (no rooms)</li>
+                            <li>Free tent pitching at Pavilion (max 2 tents)</li>
+                            <li>Extra ₱100 per head for exceeding capacity (max +3 pax)</li>
+                            <li>Overnight stay is up to 22 hours</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="accommodation-category">
-                    <h3>Where to Eat</h3>
-                    <div class="dining-grid">
-                        <div class="dining-card">
-                            <h4>Fresh Seafood</h4>
-                            <p>Catch of the day prepared in traditional and contemporary styles</p>
-                        </div>
-                        <div class="dining-card">
-                            <h4>Local Cuisine</h4>
-                            <p>Authentic Batangueño dishes including Bulalo and Lomi</p>
-                        </div>
-                        <div class="dining-card">
-                            <h4>International Dining</h4>
-                            <p>Diverse options from Asian fusion to Western favorites</p>
-                        </div>
-                        <div class="dining-card">
-                            <h4>Kapeng Barako</h4>
-                            <p>Experience the famous strong coffee native to Batangas</p>
-                        </div>
+                    <div class="note-box">
+                        <h4>Safety & House Rules</h4>
+                        <ul>
+                            <li>Swimming allowed until 7 PM only</li>
+                            <li>Videoke/Sounds until 10 PM (Barangay Ordinance)</li>
+                            <li>Guests must dispose of trash properly</li>
+                            <li>Respect local customs and environment</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -333,72 +356,220 @@
 
     <section id="events" class="section">
         <div class="container">
-            <h2 class="section-title">Events & Activities</h2>
-            <div class="events-grid">
-                <div class="event-card">
-                    <div class="event-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
+            <h2 class="section-title">Activities</h2>
+            <div class="activities-grid">
+                <!-- Bamboo Rafting -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="assets/hero-bg.JPG" alt="Bamboo Rafting">
                     </div>
-                    <h3>Volcano Trekking</h3>
-                    <p>Hike to the crater of Taal Volcano and witness breathtaking panoramic views</p>
+                    <div class="activity-content">
+                        <h3>Bamboo Rafting</h3>
+                        <p>Experience the thrill of gliding through serene mangrove waterways on a traditional bamboo raft.</p>
+                    </div>
                 </div>
-                <div class="event-card">
-                    <div class="event-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
+
+                <!-- Mangrove Boardwalk Tour -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="assets/hero-bg.JPG" alt="Mangrove Boardwalk Tour">
                     </div>
-                    <h3>Scuba Diving</h3>
-                    <p>Explore the rich marine life of Verde Island Passage, the "Amazon of the Seas"</p>
+                    <div class="activity-content">
+                        <h3>Mangrove Boardwalk Tour</h3>
+                        <p>Walk through elevated pathways surrounded by lush mangrove forests and observe diverse wildlife.</p>
+                    </div>
                 </div>
-                <div class="event-card">
-                    <div class="event-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                            <polyline points="21 15 16 10 5 21"></polyline>
-                        </svg>
+
+                <!-- Eco-Lecture and Guided Tour -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="assets/hero-bg.JPG" alt="Eco-Lecture and Guided Tour">
                     </div>
-                    <h3>Island Hopping</h3>
-                    <p>Visit pristine beaches and hidden coves around Batangas coastline</p>
+                    <div class="activity-content">
+                        <h3>Eco-Lecture & Guided Tour</h3>
+                        <p>Learn about mangrove ecosystems and environmental conservation from expert guides.</p>
+                    </div>
                 </div>
-                <div class="event-card">
-                    <div class="event-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                        </svg>
+
+                <!-- Bird Watching and Photography -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="assets/hero-bg.JPG" alt="Bird Watching and Photography">
                     </div>
-                    <h3>Cultural Tours</h3>
-                    <p>Experience local festivals, historic sites, and traditional crafts</p>
+                    <div class="activity-content">
+                        <h3>Bird Watching & Photography</h3>
+                        <p>Spot resident and migratory bird species while capturing stunning nature photography moments.</p>
+                    </div>
                 </div>
-                <div class="event-card">
-                    <div class="event-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
+
+                <!-- Tent Camping -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="assets/hero-bg.JPG" alt="Tent Camping">
                     </div>
-                    <h3>Mountain Biking</h3>
-                    <p>Challenging trails through scenic mountain landscapes and rural areas</p>
+                    <div class="activity-content">
+                        <h3>Tent Camping</h3>
+                        <p>Experience overnight camping under the stars with comfortable facilities and guided support.</p>
+                    </div>
                 </div>
-                <div class="event-card">
-                    <div class="event-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
-                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                            <line x1="12" y1="19" x2="12" y2="23"></line>
-                            <line x1="8" y1="23" x2="16" y2="23"></line>
-                        </svg>
+
+                <!-- Boodle Fight Dining -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="assets/hero-bg.JPG" alt="Boodle Fight Dining Experience">
                     </div>
-                    <h3>Photography Tours</h3>
-                    <p>Capture stunning landscapes, sunsets, and wildlife with expert guides</p>
+                    <div class="activity-content">
+                        <h3>Boodle Fight Dining</h3>
+                        <p>Enjoy a communal feast with fresh local dishes served on banana leaves - a true bonding experience.</p>
+                    </div>
+                </div>
+
+                <!-- Massage and Wellness -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="assets/hero-bg.JPG" alt="Massage and Wellness Session">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Massage & Wellness</h3>
+                        <p>Relax and rejuvenate with traditional massage and wellness therapies after outdoor activities.</p>
+                    </div>
+                </div>
+
+                <!-- Swimming and Family Bonding -->
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="assets/hero-bg.JPG" alt="Swimming and Family Bonding Activities">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Swimming & Family Bonding</h3>
+                        <p>Create lasting memories with family and friends in safe, designated swimming areas and activities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="accommodations" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Rules & Guidelines</h2>
+
+            <div class="rules-grid">
+                <!-- Environmental Guidelines -->
+                <div class="rules-card">
+                    <h3>Environmental Guidelines</h3>
+                    <ul class="rules-list">
+                        <li>Do not litter or throw trash into the sea or mangrove areas</li>
+                        <li>Avoid cutting or damaging mangrove trees and plants</li>
+                        <li>Keep noise levels low to avoid disturbing wildlife</li>
+                        <li>Follow designated paths and boardwalks</li>
+                        <li>Observe waste segregation and proper disposal</li>
+                        <li>Follow instructions from guides and staff</li>
+                    </ul>
+                </div>
+
+                <!-- House Rules -->
+                <div class="rules-card">
+                    <h3>House Rules</h3>
+                    <ul class="rules-list">
+                        <li>No unregistered guests allowed</li>
+                        <li>No smoking inside the Pyramid Hut and Closed Kubo</li>
+                        <li>Drink in moderation</li>
+                        <li>Guests are prohibited from swimming after 8 PM</li>
+                        <li>Dispose of garbage in trash cans</li>
+                        <li>Keep a close eye on your kids</li>
+                        <li>Report any damage in a timely manner</li>
+                        <li>For any questions, kindly communicate with staff</li>
+                    </ul>
+                </div>
+
+                <!-- Emergency Guidelines -->
+                <div class="rules-card">
+                    <h3>Emergency Guidelines</h3>
+                    <ul class="rules-list">
+                        <li>In case of emergency, notify park personnel immediately</li>
+                        <li>Lifeguards and trained responders are on standby during operational hours</li>
+                        <li>The nearest medical facility is Lobo District Hospital, about 10–15 minutes away</li>
+                        <li>Familiarize yourself with emergency exits and assembly points</li>
+                        <li>In case of extreme weather or natural hazards, follow staff evacuation instructions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guidelines-highlight">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 16 16 12 12 8 8 12 12 16"></polyline>
+                </svg>
+                <p>Your cooperation in following these guidelines helps us preserve the natural beauty of OLO-OLO Mangrove Forest and ensure the safety of all visitors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="oswa" class="section">
+        <div class="container">
+            <h2 class="section-title">OLO-OLO Seaside Workers Association</h2>
+            <p class="section-subtitle">Leadership and Members of OSWA</p>
+
+            <div class="oswa-grid">
+                <!-- Officers Section -->
+                <div class="oswa-card">
+                    <h3>Officers</h3>
+                    <ul class="oswa-list">
+                        <li><strong>Pangulo (President):</strong> Allan D. Cay</li>
+                        <li><strong>Pangalawang Pangulo (Vice President):</strong> Vilma D. Dimaano</li>
+                        <li><strong>Kalihim (Secretary):</strong> Irene D. Chavez</li>
+                        <li><strong>Ingat-Yaman (Treasurer):</strong> Amanda M. Dueñas</li>
+                        <li><strong>Taga Sukli (Auditor):</strong> Reynalyn Y. Bautista</li>
+                    </ul>
+                </div>
+
+                <!-- Board of Directors Section -->
+                <div class="oswa-card">
+                    <h3>Board of Directors</h3>
+                    <ul class="oswa-list">
+                        <li>Ronald E. Lago</li>
+                        <li>Nestor D. Manalo</li>
+                        <li>Rosene D. Macatangay</li>
+                        <li>Clarita R. Abanila</li>
+                        <li>Jackson R. Untalan</li>
+                        <li>Eddie D. Dueñas</li>
+                        <li>Aylien D. Dueñas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Active Members Section -->
+            <div class="oswa-members">
+                <h3>Active Members (Miyembro)</h3>
+                <div class="members-grid">
+                    <ul class="members-list">
+                        <li>Nel Alvin C. Atienza</li>
+                        <li>Ronnel D. Cay</li>
+                        <li>Jenny Jane D. Chavez</li>
+                        <li>Juanita D. De Chavez</li>
+                        <li>Roy C. Dimaano</li>
+                        <li>Elisa U. Diona</li>
+                        <li>Nenita O. Dueñas</li>
+                        <li>Alma M. Gamboa</li>
+                        <li>Henry E. Gamboa</li>
+                        <li>Jovita D. Gamboa</li>
+                    </ul>
+                    <ul class="members-list">
+                        <li>Noel T. Gamboa</li>
+                        <li>Fidelia M. Gega</li>
+                        <li>Benita M. Jerusalem</li>
+                        <li>Ryan E. Lago</li>
+                        <li>Francisco M. Lontoc Jr.</li>
+                        <li>Edgardo D. Macatangay</li>
+                        <li>Romenval D. Macatangay Jr.</li>
+                        <li>Susana D. Macatangay</li>
+                        <li>Jean Kimberly G. Manalo</li>
+                        <li>Joseph C. Nidea</li>
+                    </ul>
+                    <ul class="members-list">
+                        <li>Gina C. Ramirez</li>
+                        <li>Ismael M. Ramirez</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -449,6 +620,71 @@
                         <li>Bring adequate sun protection and water</li>
                         <li>Support local businesses and communities</li>
                         <li>Photography for commercial use requires permits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Users' Fee Section -->
+    <section id="euf" class="section">
+        <div class="container">
+            <h2 class="section-title">Environmental Users' Fee</h2>
+            <p class="section-subtitle">BAYAN NG LOBO - I LOVE LOBO BATANGAS | ORDINANCE NO. 2015-04</p>
+
+            <!-- What is EUF - Justified Text -->
+            <div class="euf-description">
+                <h3>What is Environmental Users' Fee (EUF)?</h3>
+                <p>It refers to charges imposed on any person who visits or enters the Municipality of Lobo and is not a resident thereof, for the purpose of enjoying and experiencing the natural wonders of the various tourist destinations and the services
+                    provided by the natural environment or habitat within the Municipality of Lobo. This fee is collected to support environmental conservation and maintenance of the eco-park facilities.</p>
+            </div>
+
+            <!-- Three Cards Below -->
+            <div class="euf-grid">
+                <!-- Fee Amount -->
+                <div class="euf-item">
+                    <div class="euf-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3>Fee & Duration</h3>
+                    <p><strong>₱20.00</strong> per person</p>
+                    <p class="small-text">Valid for entire stay in Lobo until exit/departure</p>
+                    <p class="small-text">Collected at entry points by authorized collectors</p>
+                </div>
+
+                <!-- Exemptions -->
+                <div class="euf-item">
+                    <div class="euf-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+                        </svg>
+                    </div>
+                    <h3>Who's Exempted?</h3>
+                    <ul class="euf-exemption-list">
+                        <li>Residents with proof of residency</li>
+                        <li>Children aged 12 and below</li>
+                        <li>PWD (Persons With Disabilities)</li>
+                        <li>Senior Citizens (20% discount)</li>
+                    </ul>
+                </div>
+
+                <!-- Proof Documents -->
+                <div class="euf-item">
+                    <div class="euf-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Accepted Proofs</h3>
+                    <ul class="euf-exemption-list">
+                        <li>Postal ID</li>
+                        <li>Barangay Certificate</li>
+                        <li>Community Tax Certificate</li>
+                        <li>Voter's ID</li>
                     </ul>
                 </div>
             </div>
@@ -539,8 +775,8 @@
                     </svg>
                     <span>Batangas City</span>
                 </div>
-                <p>Experience the natural beauty of the Philippines</p>
-                <p class="copyright">&copy; 2025 Batangas City Tourism. All rights reserved.</p>
+                <p>Experience the natural beauty of OLO-OLO Mangrove Forest and Eco Park</p>
+                <p class="copyright">&copy; 2025 OLO-OLO Eco Park. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -548,8 +784,8 @@
     <!-- Include Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
-        // Initialize the map centered on Himamawo Spring
-        var map = L.map('map').setView([13.8249956, 121.1050656], 13.94);
+        // Initialize the map centered on OLO-OLO MANGROVE FOREST AND ECO PARK
+        var map = L.map('map').setView([13.6317167, 121.2171298], 17.79);
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -557,10 +793,183 @@
             maxZoom: 19
         }).addTo(map);
 
-        // Add marker for Himamawo Spring
-        L.marker([13.8249956, 121.1050656]).addTo(map)
-            .bindPopup('Himamawo Spring')
-            .openPopup();
+        // Function to fetch realtime weather data
+        async function getWeatherData(lat, lon) {
+            try {
+                // Using Open-Meteo API - Completely free, no API key required!
+                const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,relative_humidity_2m,windspeed_10m&timezone=auto`);
+                const data = await response.json();
+
+                if (data.current_weather) {
+                    const temp = Math.round(data.current_weather.temperature);
+                    const windSpeed = data.current_weather.windspeed;
+                    const weatherCode = data.current_weather.weathercode;
+
+                    // Get humidity from hourly data (first hour)
+                    const humidity = data.hourly.relative_humidity_2m[0];
+
+                    // Weather code interpretation (WMO codes)
+                    const weatherDescriptions = {
+                        0: 'Clear sky',
+                        1: 'Mainly clear',
+                        2: 'Partly cloudy',
+                        3: 'Overcast',
+                        45: 'Fog',
+                        48: 'Depositing rime fog',
+                        51: 'Light drizzle',
+                        53: 'Moderate drizzle',
+                        55: 'Dense drizzle',
+                        56: 'Light freezing drizzle',
+                        57: 'Dense freezing drizzle',
+                        61: 'Slight rain',
+                        63: 'Moderate rain',
+                        65: 'Heavy rain',
+                        66: 'Light freezing rain',
+                        67: 'Heavy freezing rain',
+                        71: 'Slight snow fall',
+                        73: 'Moderate snow fall',
+                        75: 'Heavy snow fall',
+                        77: 'Snow grains',
+                        80: 'Slight rain showers',
+                        81: 'Moderate rain showers',
+                        82: 'Violent rain showers',
+                        85: 'Slight snow showers',
+                        86: 'Heavy snow showers',
+                        95: 'Thunderstorm',
+                        96: 'Thunderstorm with slight hail',
+                        99: 'Thunderstorm with heavy hail'
+                    };
+
+                    const description = weatherDescriptions[weatherCode] || 'Unknown';
+
+                    // Weather icons based on WMO codes
+                    const getWeatherIcon = (code) => {
+                        if (code === 0 || code === 1) return '☀️'; // Clear
+                        if (code === 2) return '⛅'; // Partly cloudy
+                        if (code === 3) return '☁️'; // Overcast
+                        if (code >= 45 && code <= 48) return '🌫️'; // Fog
+                        if (code >= 51 && code <= 67) return '🌦️'; // Rain
+                        if (code >= 71 && code <= 86) return '❄️'; // Snow
+                        if (code >= 95) return '⛈️'; // Thunderstorm
+                        return '🌤️'; // Default
+                    };
+
+                    const icon = getWeatherIcon(weatherCode);
+
+                    return `
+                        <div style="text-align: center; min-width: 200px;">
+                            <h4>${icon} Current Weather</h4>
+                            <p style="font-size: 24px; font-weight: bold;">${temp}°C</p>
+                            <p style="text-transform: capitalize;">${description}</p>
+                            <p>💧 Humidity: ${humidity}%</p>
+                            <p>💨 Wind: ${windSpeed} km/h</p>
+                            <p style="font-size: 12px; color: #666;">Last updated: ${new Date().toLocaleTimeString()}</p>
+                            <p style="font-size: 10px; color: #888;">Powered by Open-Meteo</p>
+                        </div>
+                    `;
+                } else {
+                    return '<p>Weather data unavailable</p>';
+                }
+            } catch (error) {
+                console.error('Weather API error:', error);
+                return '<p>Unable to load weather data</p>';
+            }
+        }
+
+        // Function to create weather popup
+        async function createWeatherPopup(title, subtitle, lat, lon) {
+            const weatherInfo = await getWeatherData(lat, lon);
+            return `
+                <div>
+                    <h3>${title}</h3>
+                    <p>${subtitle}</p>
+                    <hr style="margin: 10px 0;">
+                    ${weatherInfo}
+                </div>
+            `;
+        }
+
+        // Add marker for OLO-OLO MANGROVE FOREST AND ECO PARK with weather
+        const mainMarker = L.marker([13.631751, 121.2177133]).addTo(map);
+
+        // Bind default popup with just the name
+        mainMarker.bindPopup('<div style="text-align: center;"><h3 style="margin: 0; color: #2d5f3f;">OLO-OLO MANGROVE FOREST AND ECO PARK</h3><p style="margin: 5px 0; color: #5a6c57;">Main entrance and eco park area</p><p style="font-size: 12px; color: #888; margin-top: 8px;">Click or hover for weather info</p></div>').openPopup();
+
+        // Add click event for weather
+        mainMarker.on('click', async function() {
+            const content = await createWeatherPopup(
+                'OLO-OLO MANGROVE FOREST AND ECO PARK',
+                'Main entrance and eco park area',
+                13.631751,
+                121.2177133
+            );
+            this.setPopupContent(content);
+        });
+
+        // Add mouseover event for weather
+        mainMarker.on('mouseover', async function() {
+            const content = await createWeatherPopup(
+                'OLO-OLO MANGROVE FOREST AND ECO PARK',
+                'Main entrance and eco park area',
+                13.631751,
+                121.2177133
+            );
+            this.setPopupContent(content);
+            this.openPopup();
+        });
+
+        // Add markers for different areas with weather
+        const bathroomMarker = L.marker([13.6312613, 121.2182287]).addTo(map);
+
+        // Bind default popup
+        bathroomMarker.bindPopup('<div style="text-align: center;"><h3 style="margin: 0; color: #2d5f3f;">Bathroom Facilities</h3><p style="margin: 5px 0; color: #5a6c57;">Clean restrooms available</p><p style="font-size: 12px; color: #888; margin-top: 8px;">Click or hover for weather info</p></div>');
+
+        bathroomMarker.on('click', async function() {
+            const content = await createWeatherPopup(
+                'Bathroom Facilities',
+                'Clean restrooms available',
+                13.6312613,
+                121.2182287
+            );
+            this.setPopupContent(content);
+        });
+
+        bathroomMarker.on('mouseover', async function() {
+            const content = await createWeatherPopup(
+                'Bathroom Facilities',
+                'Clean restrooms available',
+                13.6312613,
+                121.2182287
+            );
+            this.setPopupContent(content);
+            this.openPopup();
+        });
+
+        const cottagesMarker = L.marker([13.6312613, 121.2182287]).addTo(map);
+
+        // Bind default popup
+        cottagesMarker.bindPopup('<div style="text-align: center;"><h3 style="margin: 0; color: #2d5f3f;">Cottages</h3><p style="margin: 5px 0; color: #5a6c57;">Comfortable accommodation options</p><p style="font-size: 12px; color: #888; margin-top: 8px;">Click or hover for weather info</p></div>');
+
+        cottagesMarker.on('click', async function() {
+            const content = await createWeatherPopup(
+                'Cottages',
+                'Comfortable accommodation options',
+                13.6312613,
+                121.2182287
+            );
+            this.setPopupContent(content);
+        });
+
+        cottagesMarker.on('mouseover', async function() {
+            const content = await createWeatherPopup(
+                'Cottages',
+                'Comfortable accommodation options',
+                13.6312613,
+                121.2182287
+            );
+            this.setPopupContent(content);
+            this.openPopup();
+        });
     </script>
     <script src="script.js"></script>
 </body>
