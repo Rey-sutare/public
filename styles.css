@@ -1466,6 +1466,7 @@ h6 {
     }
     .container {
         max-width: 100%;
+        padding: 0 16px;
         overflow-x: hidden;
     }
     /* Prevent text from causing overflow */
@@ -1491,5 +1492,10 @@ h6 {
     .btn {
         max-width: 100%;
         box-sizing: border-box;
+    }
+    
+    /* Remove any negative margins that could cause overflow */
+    .nav-container {
+        padding: 16px 16px;
     }
 }
